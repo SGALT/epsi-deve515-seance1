@@ -12,38 +12,41 @@ const source = readFileSync(new URL("./legacy.js", import.meta.url), "utf8")
   .replace(/\/\*[\s\S]*?\*\//g, "")
   .replace(/\/\/.*$/gm, "");
 
+/** Vérifie la présence (true) ou l'absence (false) d'un motif dans le code. */
+const contains = (regex) => regex.test(source);
+
 test("plus aucun var", () => {
-  assert.doesNotMatch(source, /\bvar\b/, "il reste des `var`");
+  assert.equal(contains(/\bvar\b/), false, "il reste des `var` : utilise const ou let");
 });
 
 test("plus aucune boucle for classique", () => {
-  assert.doesNotMatch(source, /\bfor\s*\(/, "il reste des `for (`");
+  assert.equal(contains(/\bfor\s*\(/), false, "il reste des `for (` : utilise map / filter / reduce");
 });
 
 test("plus aucune concaténation de chaînes avec +", () => {
-  assert.doesNotMatch(source, /["']\s*\+|\+\s*["']/, "il reste des `\"...\" +` : utilise les template literals");
+  assert.equal(contains(/["']\s*\+|\+\s*["']/), false, "il reste des `\"...\" +` : utilise les template literals");
 });
 
 test("au moins une fonction fléchée", () => {
-  assert.match(source, /=>/);
+  assert.equal(contains(/=>/), true, "aucune fonction fléchée `=>` trouvée");
 });
 
 test("au moins un template literal", () => {
-  assert.match(source, /`[^`]*\$\{/);
+  assert.equal(contains(/`[^`]*\$\{/), true, "aucun template literal `${...}` trouvé");
 });
 
 test("au moins une déstructuration d'objet en paramètre", () => {
-  assert.match(source, /\(\s*\{[^}]*\}\s*[,)]/, "déstructure au moins un paramètre : ({ name, price })");
+  assert.equal(contains(/\(\s*\{[^}]*\}\s*[,)]/), true, "déstructure au moins un paramètre : ({ name, price })");
 });
 
 test("le spread est utilisé", () => {
-  assert.match(source, /\.\.\./);
+  assert.equal(contains(/\.\.\./), true, "aucun spread `...` trouvé");
 });
 
 test("l'opérateur ?? est utilisé", () => {
-  assert.match(source, /\?\?/);
+  assert.equal(contains(/\?\?/), true, "aucun `??` trouvé (indice : le test 🐛 de withDefaults)");
 });
 
 test("le chaînage optionnel ?. est utilisé", () => {
-  assert.match(source, /\?\./);
+  assert.equal(contains(/\?\./), true, "aucun `?.` trouvé (indice : ratingOf)");
 });
