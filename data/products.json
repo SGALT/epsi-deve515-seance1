@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Clavier mécanique 65%", "price": 89.9, "category": "informatique", "stock": 12, "tags": ["clavier", "usb-c"], "rating": { "rate": 4.6, "count": 212 } },
+  { "id": 2, "name": "Souris ergonomique", "price": 49, "category": "informatique", "stock": 0, "tags": ["souris", "sans-fil"], "rating": { "rate": 4.1, "count": 98 } },
+  { "id": 3, "name": "Casque à réduction de bruit", "price": 199, "category": "audio", "stock": 5, "tags": ["casque", "bluetooth"], "rating": { "rate": 4.8, "count": 540 } },
+  { "id": 4, "name": "Câble USB-C 2 m", "price": 9.9, "category": "accessoires", "stock": 140, "tags": ["usb-c", "câble"], "rating": null },
+  { "id": 5, "name": "Écouteurs filaires", "price": 14.5, "category": "audio", "stock": 33, "tags": ["écouteurs", "jack"], "rating": { "rate": 3.9, "count": 61 } },
+  { "id": 6, "name": "Autocollants JS", "price": 0, "category": "accessoires", "stock": 999, "tags": ["goodies"], "rating": { "rate": 5, "count": 7 } },
+  { "id": 7, "name": "Support laptop alu", "price": 34.9, "stock": 8, "tags": ["bureau"], "rating": { "rate": 4.3, "count": 120 } },
+  { "id": 8, "name": "Hub USB 7 ports", "price": 29.9, "category": "informatique", "stock": 21, "tags": ["usb", "hub"], "rating": { "rate": 4, "count": 45 } },
+  { "id": 9, "name": "Enceinte portable", "price": 59, "category": "audio", "stock": 0, "tags": ["bluetooth", "enceinte"], "rating": { "rate": 4.4, "count": 230 } },
+  { "id": 10, "name": "Tapis de souris XXL", "price": 19.9, "category": "accessoires", "stock": 50, "tags": ["bureau", "souris"], "rating": { "rate": 4.7, "count": 310 } }
+]

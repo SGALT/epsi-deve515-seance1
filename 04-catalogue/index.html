@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini-catalogue · CP4</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Mini-catalogue</h1>
+      <button id="cart-toggle" type="button">
+        Panier · <span id="cart-count">0</span>
+      </button>
+    </header>
+
+    <main>
+      <label class="search">
+        <span>Rechercher</span>
+        <input id="search" type="search" placeholder="clavier, casque, câble…" autocomplete="off" />
+      </label>
+
+      <p id="status" class="status">Chargement…</p>
+      <ul id="products" class="grid"></ul>
+    </main>
+
+    <aside id="cart" class="cart" hidden>
+      <h2>Panier</h2>
+      <ul id="cart-items"></ul>
+      <p class="total">Total : <span id="cart-total">0,00 €</span></p>
+    </aside>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

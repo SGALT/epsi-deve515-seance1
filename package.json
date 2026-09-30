@@ -1,0 +1,20 @@
+{
+  "name": "deve515-seance1-refresh-js",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "DEVE515 – Séance 1 : refresh JavaScript (course à la réussite)",
+  "scripts": {
+    "test": "node --test \"0*/*.test.js\"",
+    "test:1": "node --test \"01-refactoring/*.test.js\"",
+    "test:2": "node --test \"02-closures/*.test.js\"",
+    "test:3": "node --test \"03-async/*.test.js\"",
+    "watch:1": "node --test --watch \"01-refactoring/*.test.js\"",
+    "watch:2": "node --test --watch \"02-closures/*.test.js\"",
+    "watch:3": "node --test --watch \"03-async/*.test.js\"",
+    "demo:3": "node 03-async/main.js"
+  },
+  "engines": {
+    "node": ">=20.4"
+  }
+}
