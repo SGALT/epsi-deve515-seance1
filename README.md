@@ -54,7 +54,7 @@ Cette séance n'est pas un cours : c'est une **course**. Vous avancez en binôme
 node -v        # 20.4 ou plus (22 recommandé)
 npm -v
 git --version
-git clone <URL_DU_REPO> && cd deve515-seance1-refresh-js
+git clone https://github.com/SGALT/epsi-deve515-seance1.git && cd deve515-seance1-refresh-js
 npm test       # doit lancer les tests : c'est normal qu'il y en ait des rouges !
 ```
 
